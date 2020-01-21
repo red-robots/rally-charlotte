@@ -11,15 +11,24 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php $donateLink = get_field("donate_link","option"); ?>
 <div id="mobile-navigation">
-	<div class="donate"><a href="#" class="donate-btn-mobile"><span>DONATE</span></a></div>
+	<?php if ($donateLink) { ?>
+		<div class="donate"><a href="<?php echo $donateLink ?>" target="_blank" class="donate-btn-mobile"><span>DONATE</span></a></div>
+	<?php } ?>
+	
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mobile-menu','container_class'=>'menuwrap' ) ); ?></div>
 <div id="page" class="site cf">
 	<div id="header-overlay"></div>
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
-			<a href="#" class="donate-btn"><span>DONATE</span></a>
+
+			<?php if ($donateLink) { ?>
+			<a href="<?php echo $donateLink ?>" target="_blank" class="donate-btn"><span>DONATE</span></a>
+			<?php } ?>
+
 			<div class="flexwrap">
 				<?php if( get_custom_logo() ) { ?>
 		            <div class="logo">
