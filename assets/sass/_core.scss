@@ -117,7 +117,10 @@ body {
 	@include tab {
 		position: relative;
 		top: 0;
-		width: 30%;
+		width: 20%;
+	}
+	@include mid {
+		width: 26%;
 	}
 	a,img {
 		display: block;
@@ -173,7 +176,10 @@ body {
 	display: none;
 	@include tab {
 		display: block;
-		width: 70%;
+		width: 78%;
+	}
+	@include mid {
+		width: 74%;
 	}
 	ul {
 		margin: 0 0;
@@ -199,8 +205,12 @@ body {
 		float: left;
 	}
 	ul.menu > li > a {
-		font-size: 16px;
-		padding: 5px 18px;
+		font-size: 1.6vw;
+		padding: 5px 10px;
+		@include mid {
+			padding: 5px 18px;
+			font-size: 16px;
+		}
 	}
 	ul.menu > li:hover > a {
 		color: $secondary;
@@ -230,9 +240,13 @@ body {
 		display: none;
 	}
 	&.open {
+		display: block;
 		visibility: visible;
 		z-index: 5000;
 		transform: translateX(0);
+		@include tab {
+			display: none;
+		}
 	}
 	.menuwrap {
 		padding-top: 30px;
@@ -302,10 +316,12 @@ body.admin-bar #mobile-navigation {
 	position: absolute;
 	top: 0;
 	right: 20px;
-	width: 50px;
+	width: 45px;
 	height: 100%;
 	padding: 6px;
 	border: none;
+	overflow: hidden;
+	text-align: center;
 	@include tab {
 		display: none;
 	}
@@ -313,8 +329,8 @@ body.admin-bar #mobile-navigation {
 		position: relative;
 	}
 	span.bar, span.bar:before, span.bar:after {
-		display: block;
-		width: 100%;
+		display: inline-block;
+		width: 45px;
 		height: 5px;
 		background: $primary;
 		transition: all ease-in-out .3s;
@@ -331,7 +347,8 @@ body.admin-bar #mobile-navigation {
 		top: 11px;
 	}
 	&.open {
-		right: 15px;
+		width: 20%;
+		right: 0;
 		span.bar {
 			background: transparent;
 		}
@@ -359,6 +376,9 @@ body.admin-bar #mobile-navigation {
 }
 body.nav-open #header-overlay {
 	display: block;
+	@include tab {
+		display: none;
+	}
 }
 
 /* FOOTER */

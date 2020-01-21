@@ -15,7 +15,7 @@ $font_pre: "Courier 10 Pitch", Courier, monospace;
 
 $xswidth: 380px;
 $tabwidth: 820px;
-$midwidth: 960px;
+$midwidth: 1060px;
 $deskwidth: 1200px;
 
 @mixin xs { @media (min-width: $xswidth) { @content; } }
