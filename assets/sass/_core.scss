@@ -374,6 +374,9 @@ body.admin-bar #mobile-navigation {
 	z-index: 3000;
 	display: none;
 }
+body.admin-bar.nav-open #header-overlay {
+	top: 116px;
+}
 body.nav-open #header-overlay {
 	display: block;
 	@include tab {
