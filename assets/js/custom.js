@@ -36,16 +36,17 @@ jQuery(document).ready(function ($) {
 	new WOW().init();
 
 
-	$(document).on("click","#toggleMenu",function(){
+	$(document).on("click",".menu-toggle",function(e){
+		e.preventDefault();
 		$(this).toggleClass('open');
-		$('.mobile-navigation').toggleClass('open');
-		$('body').toggleClass('open-mobile-menu');
-		$('.site-header .logo').toggleClass('fixed');
-		var parentdiv = $(".mobile-navigation").outerHeight();
-		var mobile_nav_height = $(".mobile-main-nav").outerHeight();
-		if(mobile_nav_height>parentdiv) {
-			$('.mobile-navigation').addClass("overflow-height");
-		}
+		$('#mobile-navigation').toggleClass('open');
+		$('body').toggleClass('nav-open');
+		$('.site-header').toggleClass('move-left');
 	});
+
+	$(document).on("click","#header-overlay",function(){
+		$(".menu-toggle").trigger("click");
+	});
+	
 
 });// END #####################################    END

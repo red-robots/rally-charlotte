@@ -149,8 +149,9 @@ function email_obfuscator($string) {
 function get_social_links() {
     $social_types = array(
         'facebook'  => 'fab fa-facebook-square',
-        'twitter'   => 'fab fa-twitter-square',
         'instagram' => 'fab fa-instagram',
+        'twitter'   => 'fab fa-twitter-square',
+        'linkedin'  => 'fab fa-linkedin',
         'snapchat'  => 'fab fa-snapchat-ghost',
         'youtube'   => 'fab fa-youtube'
     );

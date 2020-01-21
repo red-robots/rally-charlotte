@@ -11,10 +11,12 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="mobile-navigation"></div>
+<div id="mobile-navigation">
+	<div class="donate"><a href="#" class="donate-btn-mobile"><span>DONATE</span></a></div>
+	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mobile-menu','container_class'=>'menuwrap' ) ); ?></div>
 <div id="page" class="site cf">
+	<div id="header-overlay"></div>
 	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
-
 	<header id="masthead" class="site-header" role="banner">
 		<div class="wrapper">
 			<a href="#" class="donate-btn"><span>DONATE</span></a>
@@ -32,9 +34,11 @@
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>'menuwrap' ) ); ?>
 				</nav><!-- #site-navigation -->
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="sr"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></span><span class="bar"></span></button>
 			</div>
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="sr"><?php esc_html_e( 'MENU', 'bellaworks' ); ?></span><span class="bar"></span></button>
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
+
+	<?php get_template_part('parts/content','banner'); ?>
 
 	<div id="content" class="site-content wrapper">
