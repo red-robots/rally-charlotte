@@ -7,7 +7,7 @@ $secondary: #fa4515;
 
 
 $font_primary: 'Hind', sans-serif;
-$font_secondary: 'Nanum Gothic', sans-serif;
+$font_secondary: 'Heebo', sans-serif;
 $font_condensed1: 'Fjalla One', sans-serif;
 $font_condensed2: 'Barlow Condensed', sans-serif;
 $font_code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -15,8 +15,9 @@ $font_pre: "Courier 10 Pitch", Courier, monospace;
 
 $xswidth: 380px;
 $tabwidth: 820px;
-$midwidth: 1060px;
-$deskwidth: 1200px;
+$midwidth: 1100px;
+$deskwidth: 1300px;
+$wrapper_medium: 860px;
 
 @mixin xs { @media (min-width: $xswidth) { @content; } }
 @mixin tab { @media (min-width: $tabwidth) { @content; } }

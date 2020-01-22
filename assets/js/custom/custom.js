@@ -6,26 +6,37 @@
  */
 
 jQuery(document).ready(function ($) {
-	
-	/*
-	*
-	*	Flexslider
-	*
-	------------------------------------*/
-	$('.flexslider').flexslider({
-		animation: "slide",
-	}); // end register flexslider
-	
-	/*
-	*
-	*	Colorbox
-	*
-	------------------------------------*/
-	$('a.gallery').colorbox({
-		rel:'gal',
-		width: '80%', 
-		height: '80%'
-	});
+
+
+	/* Slideshow */
+	if( $("#slideshow").length ) {
+		var swiper = new Swiper('#slideshow', {
+			slidesPerView: 1,
+			spaceBetween: 0,
+			effect: 'slide', /* "fade", "cube", "coverflow" or "flip" */
+			loop: true,
+			autoplay: {
+				delay: 4000,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+	    });
+	    swiper.on('slideChangeTransitionStart', function (e) {
+	    	$(".swiper-slide").each(function(){
+	    		if( $(this).hasClass('swiper-slide-active') ) {
+	    			$(this).find('.slideTxt').addClass('fadeInLeft');
+	    		} else {
+	    			$(this).find('.slideTxt').removeClass('fadeInLeft');
+	    		}
+	    	});
+		});
+	}
 	
 
 	/*
