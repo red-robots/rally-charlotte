@@ -59,7 +59,8 @@
 	$services_image = get_field("services_image"); 
 	$services = get_field("services"); 
 	$services_graphic = get_field("services_graphic"); 
-	$servicesClass = ($services_image && $services) ? 'twocol':'onecol';
+	//$servicesClass = ($services_image && $services) ? 'twocol':'onecol';
+	$servicesClass = ($services_image && $services_graphic) ? 'twocol':'onecol';
 	$placeholder = get_bloginfo("template_url") . "/images/rectangle-lg.png";
 	$square_placeholder = get_bloginfo("template_url") . "/images/square.png";
 	?>
