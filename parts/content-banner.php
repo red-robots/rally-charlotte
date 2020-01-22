@@ -28,7 +28,9 @@ $placeholder = get_bloginfo("template_url") . "/images/rectangle-lg.png";
 		    <div class="swiper-button-prev"></div>
 		<?php } ?>
 	</div>
-	<div class="circle-dashed-line"></div>
+	<div class="circle-dashed-svg">
+		<img src="<?php echo get_bloginfo("template_url") ?>/images/half-circle-dashed.svg" alt="" aria-hidden="true">
+	</div>
 </div>
 
 <?php } ?>
