@@ -18,6 +18,7 @@ $tabwidth: 820px;
 $midwidth: 1100px;
 $deskwidth: 1300px;
 $wrapper_medium: 860px;
+$main_wrapper: 1300px;
 
 @mixin xs { @media (min-width: $xswidth) { @content; } }
 @mixin tab { @media (min-width: $tabwidth) { @content; } }

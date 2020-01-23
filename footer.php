@@ -25,7 +25,7 @@
 				<?php } ?>
 				
 				<div class="fotcol footermenu">
-					<?php wp_nav_menu( array( 'menu' => 'Footer', 'menu_id' => 'footer-menu','container_class'=>'flexcol footer-menu-wrap' ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'menu_id' => 'footer-menu','container_class'=>'flexcol footer-menu-wrap' ) ); ?>
 				</div>
 
 				<?php if ($social) { ?>

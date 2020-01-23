@@ -37,6 +37,23 @@ jQuery(document).ready(function ($) {
 	    	});
 		});
 	}
+
+	/* Get Window Width size */
+	screen_width_size();
+	window.addEventListener("resize", function() {
+	    screen_width_size();
+	}, false);
+	
+	function screen_width_size() {
+		var currentScreenSize = $('body').outerWidth();
+		var wrapperWidth = $("#masthead > .wrapper").outerWidth();
+		var screenSpace = currentScreenSize - wrapperWidth;
+		var sideWidth = Math.round(screenSpace/2);
+		$(".rightbg").css('width',sideWidth+'px');
+	}
+	
+
+	
 	
 
 	/*

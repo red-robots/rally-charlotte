@@ -1,10 +1,11 @@
+<?php $placeholder = get_bloginfo("template_url") . "/images/rectangle-lg.png"; ?>
+
 <?php if ( is_front_page() ) { ?>
 
 <?php  
 $slides = get_field("banner");
 $count = ($slides) ? count($slides) : 0;
 $slidesId = ($count>1) ? 'slideshow':'static-banner';
-$placeholder = get_bloginfo("template_url") . "/images/rectangle-lg.png";
 ?>
 <div class="banner-wrapper home-banner">
 	<div id="<?php echo $slidesId ?>" class="swiper-container banners">
@@ -32,5 +33,21 @@ $placeholder = get_bloginfo("template_url") . "/images/rectangle-lg.png";
 		<img src="<?php echo get_bloginfo("template_url") ?>/images/half-circle-dashed.svg" alt="" aria-hidden="true">
 	</div>
 </div>
+
+<?php } else {  ?>
+
+	<?php $banner = get_field("banner"); ?>
+	<?php if ($banner) { ?>
+	<div id="subpage-banner" class="subpage-banner cf">
+		<div class="banner-image cf" style="background-image:url('<?php echo $banner['url'] ?>');">
+			<img src="<?php echo $placeholder ?>" alt="" aria-hidden="true" class="placeholder"/>
+			<img src="<?php echo $banner['url'] ?>" alt="<?php echo $banner['title'] ?>" style="display:none;"/>
+			<div class="banner-caption">
+				<div class="banner-inner"><h1><?php echo get_the_title(); ?></h1></div>
+				<div class="rightbg"></div>
+			</div>
+		</div>
+	</div>	
+	<?php } ?>
 
 <?php } ?>

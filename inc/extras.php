@@ -165,3 +165,18 @@ function get_social_links() {
     return $social;
 }
 
+function get_slider() {
+    $obj = get_queried_object();
+    $taxonomy = ( isset($obj->taxonomy) && $obj->taxonomy ) ? $obj->taxonomy : '';
+    $banner = get_field('banner');
+    //$galleryPageId = get_page_id_by_template('page-gallery');
+    //$parent_page_id = ( $galleryPageId ) ? $galleryPageId : '';
+    // if($parent_page_id) {
+    //     return get_field('banner',$parent_page_id);
+    // } else {
+    //     return get_field('banner');
+    // }
+    return $banner;
+}
+
+

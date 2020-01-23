@@ -10,7 +10,12 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+$banner = get_slider();
+$hasBanner = ($banner) ? 'hasbanner':'nobanner';
+?>
+
+<body <?php body_class($hasBanner); ?>>
 
 <?php $donateLink = get_field("donate_link","option"); ?>
 <div id="mobile-navigation">

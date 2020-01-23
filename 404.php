@@ -18,6 +18,7 @@ get_header(); ?>
 
 			<div class="entry-content">
 				<p><?php esc_html_e( 'Nothing was found at this location.'); ?></p>
+				<?php get_template_part('parts/content','sitemap'); ?>
 			</div>
 		</section>
 

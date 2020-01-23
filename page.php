@@ -11,17 +11,20 @@
  *
  * @package bellaworks
  */
-
+$banner = get_slider();
 get_header(); ?>
 
 	<div id="primary" class="content-area default wrapper cf">
 		<main id="main" data-postid="<?php the_ID(); ?>" class="site-main cf" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
+				
+				<?php if (!$banner) { ?>
 				<header class="entry-header">
 					<h1 class="entry-title"><?php echo the_title(); ?></h1>
 				</header>
+				<?php } ?>
+				
 
 				<div class="entry-content">
 					<?php the_content(); ?>
