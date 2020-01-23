@@ -17,7 +17,7 @@ get_header(); ?>
 			</header>
 
 			<div class="entry-content">
-				<p><?php esc_html_e( 'Nothing was found at this location.'); ?></p>
+				<p style="margin-top:5px;"><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below.', 'bellaworks' ); ?></p>
 				<?php get_template_part('parts/content','sitemap'); ?>
 			</div>
 		</section>

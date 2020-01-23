@@ -1105,7 +1105,7 @@ body.nav-open #header-overlay {
 		}
 	}
 	ul.menu > li > a:hover:before {
-		background: tint($primary,40%);
+		background: $secondary;
 	}
 	ul.menu {		
 		@include tab {
@@ -1128,7 +1128,7 @@ body.nav-open #header-overlay {
 		text-decoration: none;
 		display: inline-block;
 		&:hover {
-			color: tint($primary,40%);
+			color: $secondary;
 		}
 	}
 }
