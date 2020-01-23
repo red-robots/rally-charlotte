@@ -43,9 +43,9 @@
 				<?php if ($columnText2) { ?>
 				<div class="textcol">
 					<div class="inside">
-						<?php echo $columnText1 ?>
-						<?php if ($columnBtnName1 && $columnBtnLink1) { ?>
-						<div class="btndiv"><a href="<?php echo $columnBtnLink1 ?>" class="btnlink"><?php echo $columnBtnName1 ?></a></div>
+						<?php echo $columnText2 ?>
+						<?php if ($columnBtnName2 && $columnBtnLink2) { ?>
+						<div class="btndiv"><a href="<?php echo $columnBtnLink2 ?>" class="btnlink"><?php echo $columnBtnName2 ?></a></div>
 						<?php } ?>		
 					</div>
 				</div>	
