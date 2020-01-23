@@ -825,6 +825,11 @@ body{font-family:"Hind",sans-serif;font-size:16px;font-weight:400;line-height:1.
 #mobile-navigation .donate{text-align:center;padding-top:30px}
 #mobile-navigation .donate-btn-mobile{display:inline-block;text-decoration:none;color:#FFF;background:#fa4515;padding:8px 45px;border-radius:80px;font-family:"Barlow Condensed",sans-serif;font-size:22px;letter-spacing:.02em}
 #mobile-navigation .donate-btn-mobile:hover{background:#0a5157}
+#mobile-navigation ul.menu>li>ul{padding-top:10px;padding-bottom:10px}
+#mobile-navigation ul.sub-menu{padding-left:45px;border-bottom:1px solid #e8e8e8}
+#mobile-navigation ul.sub-menu ul{padding-left:25px;border-bottom:0}
+#mobile-navigation ul.sub-menu a{padding:7px 0;line-height:1.2}
+#mobile-navigation ul.sub-menu li.current_page_item>a,#mobile-navigation ul.sub-menu li:hover>a{color:#fa4515}
 body.admin-bar #mobile-navigation{padding-top:50px}
 .menu-toggle{display:block;-webkit-appearance:none;outline:0;box-shadow:none;text-shadow:none;background:#FFF;position:absolute;top:0;right:20px;width:45px;height:100%;padding:6px;border:0;overflow:hidden;text-align:center}
 @media(min-width:820px){.menu-toggle{display:none}
@@ -894,7 +899,7 @@ body.nav-open #header-overlay{display:block}
 .site-footer .social-media a:hover{color:white}
 .fotcol.footlogo{width:15%}
 .fotcol.footlogo img{opacity:.7;width:100%;height:auto}
-.fotcol.address{width:20%;padding-left:20px}
+.fotcol.address{width:20%;padding-left:4%}
 .fotcol.footermenu{width:50%}
 .fotcol.social-media{width:15%;text-align:right}
 .footermenu ul.menu{margin:0;padding:0;list-style:none}

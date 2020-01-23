@@ -571,6 +571,26 @@ body {
 			background: $primary;
 		}
 	}
+	ul.menu > li > ul {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	ul.sub-menu {
+		padding-left: 45px;
+		border-bottom: 1px solid #e8e8e8;
+		ul {
+			padding-left: 25px;
+			border-bottom: none;
+		}
+		a {
+			padding: 7px 0;
+			line-height: 1.2;
+		}
+	}
+	ul.sub-menu li.current_page_item > a,
+	ul.sub-menu li:hover > a {
+		color: $secondary;
+	}
 }
 body.admin-bar #mobile-navigation {
 	padding-top: 50px;
@@ -943,7 +963,7 @@ body.nav-open #header-overlay {
 	}
 	&.address {
 		width: 20%;
-		padding-left: 20px;
+		padding-left: 4%;
 	}
 	&.footermenu {
 		width: 50%;
