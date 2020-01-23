@@ -146,7 +146,7 @@ body {
 /* Banner */
 .banner-wrapper {
 	// height: 60vh;
-	height: 480px;
+	height: 460px;
 	background: #CCC;
 	position: relative;
 	z-index: 100;
@@ -254,7 +254,7 @@ body {
 	}
 }
 .subpage-banner {
-	height: 480px;
+	height: 460px;
 	background: #CCC;
 	position: relative;
 	z-index: 100;
@@ -292,19 +292,23 @@ body {
 			margin: 0 auto;
 		}
 		h1 {
-			max-width: 80%;
+			max-width: 100%;
 			width: 100%;
 			margin: 0 0;
 			color: #FFF;
 			font-family: $font_condensed2;
 			font-weight: 400;
-			font-size: 2.8em;
+			font-size: 2.2em;
 			text-transform: uppercase;
 			line-height: 1.1;
 			background: rgba(228, 54, 8, 0.9);
 			padding-left: 20px;
 			padding-top: 15px;
     		padding-bottom: 15px;
+    		@include tab {
+    			max-width: 80%;
+    			font-size: 2.8em;
+    		}
 		}
 		.rightbg {
 			background: rgba(228, 54, 8, 0.9);
