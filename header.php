@@ -17,10 +17,13 @@ $hasBanner = ($banner) ? 'hasbanner':'nobanner';
 
 <body <?php body_class($hasBanner); ?>>
 
-<?php $donateLink = get_field("donate_link","option"); ?>
+<?php 
+$donateLink = get_field("donate_link","option"); 
+$plinks = ($donateLink) ? parse_external_url($donateLink) : '';
+?>
 <div id="mobile-navigation">
 	<?php if ($donateLink) { ?>
-		<div class="donate"><a href="<?php echo $donateLink ?>" target="_blank" class="donate-btn-mobile"><span>DONATE</span></a></div>
+		<div class="donate"><a href="<?php echo $plinks['url'] ?>" target="<?php echo $plinks['target'] ?>" class="donate-btn-mobile <?php echo $plinks['class'] ?>"><span>DONATE</span></a></div>
 	<?php } ?>
 	
 	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'mobile-menu','container_class'=>'menuwrap' ) ); ?></div>
@@ -31,7 +34,7 @@ $hasBanner = ($banner) ? 'hasbanner':'nobanner';
 		<div class="wrapper">
 
 			<?php if ($donateLink) { ?>
-			<a href="<?php echo $donateLink ?>" target="_blank" class="donate-btn"><span>DONATE</span></a>
+			<a href="<?php echo $plinks['url'] ?>" target="<?php echo $plinks['target'] ?>" class="donate-btn <?php echo $plinks['class'] ?>"><span>DONATE</span></a>
 			<?php } ?>
 
 			<div class="flexwrap">
