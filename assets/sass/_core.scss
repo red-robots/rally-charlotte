@@ -991,6 +991,43 @@ body.nav-open #header-overlay {
 	}
 }
 
+/* FORMS */
+#main .gform_wrapper {
+	.gform_footer input.button, 
+	.gform_footer input[type=submit], 
+	.gform_page_footer input.button, 
+	.gform_page_footer input[type=submit] {
+		-webkit-appearance: none;
+		border-radius: 0px;
+		border: none;
+		background: $secondary;
+		color: #FFF;
+		padding: 12px 20px 10px;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 1.2;
+		&:hover {
+			background: $primary;
+		}
+	}
+	textarea,
+	input[type="text"],
+	input[type="emai"] {
+		-webkit-appearance: none;
+		border-radius: 0px;
+		border: 1px solid $primary;
+		&:focus {
+			border-color: #2fb7b4;
+			outline: 0;
+			-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+			box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+		}
+	}
+	.gform_footer {
+		margin-top: 0;
+	}
+}
+
 /* FOOTER */
 .site-footer {
 	background: $primary;
