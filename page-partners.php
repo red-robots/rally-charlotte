@@ -1,33 +1,51 @@
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package bellaworks
+ * Template Name: Our Partners
  */
 $banner = get_slider();
 get_header(); ?>
 
-	<div id="primary" class="content-area default cf">
+	<div id="primary" class="content-area default cf partnerspage">
 		<main id="main" data-postid="<?php the_ID(); ?>" class="site-main cf" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
+				$community_partners = get_field("community_partners");  
 				$columnText1 = get_the_content();  
 				$columnText2 = get_field("sidebar_content");  
 				$title_of_sidebar = get_field("title_of_sidebar");  
 				$slides = get_field("bottom_image");  
-				$featimage = get_field("featimage");  
-				$featimage_caption = get_field("featimage_caption");  
-				$hasTwoCol = ($columnText1 && ($columnText2 || $featimage)) ? 'twocol':'onecol';
+				$hasTwoCol = ($columnText1 && $columnText2) ? 'twocol':'onecol';
 				?>
+
+				<?php if ($community_partners) { ?>
+				<section class="section tiles cf">
+					<div class="wrapper">
+						<div class="flexwrap">
+							<?php foreach ($community_partners as $c) { 
+								$img = $c['partner_logo'];
+								$link = $c['partner_website'];
+								$parts = ($link) ? parse_external_url($link) : '';
+								$hasLink = ($link) ? 'haslink':'nolink';
+								$openLink = '';
+								$closeLink = '';
+								if($link) {
+									$openLink = '<a href="'.$parts['url'].'" target="'.$parts['target'].'" class="'.$parts['class'].'">';
+									$closeLink = '</a>';
+								}
+								if($img) { ?>
+								<div class="flexcol <?php echo $hasLink ?>">
+									<div class="inside">
+									<?php echo $openLink ?><img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" class="partner-logo"><?php echo $closeLink ?>
+									</div>
+								</div>	
+								<?php } ?>
+							<?php } ?>
+						</div>
+					</div>
+				</section>
+				<?php } ?>
 
 				<?php if ( $columnText1 || $columnText2 ) { ?>
 					
@@ -43,23 +61,13 @@ get_header(); ?>
 								</div>	
 								<?php } ?>
 
-								<?php if ($columnText2 || $featimage) { ?>
+								<?php if ($columnText2) { ?>
 								<div class="textcol txt2">
 									<div class="inside">
 										<?php if ($title_of_sidebar) { ?>
 										<h2 class="sbtitle"><?php echo $title_of_sidebar ?></h2>	
 										<?php } ?>
 										<?php echo $columnText2 ?>
-
-										<?php if ($featimage) { ?>
-										<figure class="feat-image">
-											<img src="<?php echo $featimage['url'] ?>" alt="<?php echo $featimage['title'] ?>" />
-											
-											<?php if ($featimage_caption) { ?>
-											<div class="image-caption"><?php echo $featimage_caption ?></div>
-											<?php } ?>
-										</figure>
-										<?php } ?>
 									</div>
 								</div>	
 								<?php } ?>

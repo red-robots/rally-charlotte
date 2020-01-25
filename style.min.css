@@ -910,6 +910,17 @@ body.nav-open #header-overlay{display:block}
 #main .gform_wrapper textarea,#main .gform_wrapper input[type="text"],#main .gform_wrapper input[type="emai"]{-webkit-appearance:none;border-radius:0;border:1px solid #0a5157}
 #main .gform_wrapper textarea:focus,#main .gform_wrapper input[type="text"]:focus,#main .gform_wrapper input[type="emai"]:focus{border-color:#2fb7b4;outline:0;box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6)}
 #main .gform_wrapper .gform_footer{margin-top:0}
+.section.tiles{padding-top:20px}
+@media(min-width:820px){.section.tiles{padding-top:80px}
+}.section.tiles .flexwrap{display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-left:-15px;margin-right:-15px}
+.section.tiles .flexcol{width:100%;padding:15px;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+@media(min-width:820px){.section.tiles .flexcol{width:33.33%}
+}.section.tiles .flexcol a.link,.section.tiles .flexcol img{display:block;width:100%;height:auto;text-decoration:none;-webkit-transition:all ease-out .3s;transition:all ease-out .3s}
+.section.tiles .flexcol .inside{-webkit-transition:all ease-out .3s;transition:all ease-out .3s;border-radius:10px;overflow:hidden;padding:20px}
+.section.tiles .flexcol.haslink .inside:hover{box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6)}
+.section.tiles .flexcol.haslink .inside:hover img{-webkit-transform:scale(1.08);-ms-transform:scale(1.08);transform:scale(1.08)}
+.typical .feat-image{margin:0}
+.typical .feat-image img{width:100%;height:auto;margin-bottom:10px;margin-top:18px}
 .site-footer{background:#0a5157;color:rgba(255,255,255,0.75);font-size:13px;font-weight:300;line-height:1.4}
 .site-footer .wrapper{padding-top:20px;padding-bottom:20px}
 .site-footer .foot-content{position:relative;display:-webkit-box;display:-ms-flexbox;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-flex-direction:row;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
