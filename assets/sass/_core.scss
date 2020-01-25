@@ -1035,20 +1035,24 @@ body.nav-open #header-overlay {
 	}
 	.flexwrap {
 		@include flexgroup-center();
-		margin-left: -15px;
-		margin-right: -15px;
+		@include flexbox-justify(center);
 	}
 	.flexcol {
 		width: 100%;
-		padding: 15px;
+		padding: 0;
 		transition: all ease-out .3s;
+		text-align: center;
+		@include xs {
+			width: 50%;
+		}
 		@include tab {
-			width: 33.33%;
+			width: 33.3%;
 		}
 		a.link, img {
 			display: block;
 			width: 100%;
 			height: auto;
+			margin: 0 auto;
 			text-decoration: none;
 			transition: all ease-out .3s;
 		}
@@ -1057,6 +1061,12 @@ body.nav-open #header-overlay {
 			border-radius: 10px;
 			overflow: hidden;
 			padding: 20px;
+			img {
+				max-width: 280px;
+				@include mid {
+					max-width: 80%;
+				}
+			}
 		}
 		&.haslink {
 			.inside:hover {
