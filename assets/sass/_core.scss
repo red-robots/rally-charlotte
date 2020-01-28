@@ -991,6 +991,124 @@ body.nav-open #header-overlay {
 	}
 }
 
+.bottom-info-section {
+	width: 100%;
+	border-top: 10px solid $secondary;
+	padding-top: 50px;
+    padding-bottom: 50px;
+    @include tab {
+    	padding-top: 70px;
+    	padding-bottom: 80px;
+    }
+    @include desk {
+    	padding-top: 90px;
+    	padding-bottom: 100px;
+    }
+    .wrapper {
+    	max-width: 1000px;
+		width: 100%;
+    }
+	.bottomImage {
+		max-width: 320px;
+		width: 75%;
+		margin: 0 auto;
+		position: relative;
+		overflow: hidden;
+		.imageWrap {
+			width: 100%;
+			float: left;
+			overflow: hidden;
+			position: relative;
+		}
+		div.image {
+			background-size: cover;
+			background-position: top center;
+			background-repeat: no-repeat;
+			width: 81%;
+			height: 81%;
+			border-radius: 100%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+		}
+		img {
+			width: 100%;
+			height: auto;
+			float: left;
+		}
+		img.frame {
+			position: relative;
+			top: 0;
+			left: 0;
+			z-index: 5;
+		}
+	}
+	.bottomText {
+		width: 100%;
+		text-align: center;
+		@include tab {
+			text-align: left;
+		}
+	}
+	&.twocol {
+		.bottomImage {
+			width: 70%;
+			@include tab {
+				width: 28%;
+			}
+		}
+		.bottomText {
+			padding-top: 20px;
+			padding-bottom: 20px;
+			@include tab {
+				max-width: auto;
+				width: 72%;
+				padding-left: 5%;
+				@include flexbox();
+				@include flexbox-wrap(wrap);
+				@include flexbox-align-items(center);
+				@include flexbox-align-content(center);
+			}
+		}
+	}
+	.bottomText .inside {
+		font-family: $font_condensed2;
+		font-size: 2em;
+		font-weight: 300;
+		line-height: 1.1;
+		@include tab {
+			font-size: 2.8em;
+		}
+		p:first-child {
+			margin-top: 0;
+		}
+		// p:last-child {
+		// 	margin-bottom: 0;
+		// }
+		p {
+			margin-bottom: 0.6em;
+		}
+	}
+}
+
+.btn, .btn-default {
+	display: inline-block;
+	background: $secondary;
+	border: none;
+	-webkit-appearance: none;
+	text-decoration: none;
+	box-shadow: none;
+	text-shadow: none;
+	color: #FFF;
+	font-weight: 500;
+    font-size: 1.2em;
+    padding: 6px 20px 4px;
+    transition: all ease-out .3s;
+    &:hover {
+		background: $primary;
+    }
+}
 /* FORMS */
 #main .gform_wrapper {
 	.gform_footer input.button, 

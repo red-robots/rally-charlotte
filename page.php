@@ -99,6 +99,48 @@ get_header(); ?>
 						</div>
 					</section>
 					<?php } ?>
+
+					<?php 
+					$bottom_thumb_image = get_field("bottom_thumb_image");
+					$bottom_text = get_field("bottom_text");
+					$bottomBtnName = get_field("bottom_button_name");
+					$bottomBtnLink = get_field("bottom_button_link");
+					$bottomCols = ($bottom_thumb_image && $bottom_text) ? 'twocol':'onecol';
+					$symbol = get_bloginfo("template_url") . "/images/rally-symbol.png";
+					$squareImg = get_bloginfo("template_url") . "/images/rectangle.png";
+					?>
+
+					<?php if ($bottom_thumb_image || $bottom_text) { ?>
+					<section class="bottom-info-section fullwidth-fl <?php echo $bottomCols ?>">
+						<div class="wrapper">
+							<div class="flexwrap">
+								<?php if ($bottom_thumb_image) { ?>
+								<div class="bottomImage">
+									<div class="imageWrap">
+										<div class="image" style="background-image:url('<?php echo $bottom_thumb_image['url'] ?>');">
+											<img src="<?php echo $bottom_thumb_image['url'] ?>" alt="<?php echo $bottom_thumb_image['title'] ?>" style="display:none;">
+											<img src="<?php echo $squareImg ?>" alt="" aria-hidden="true">
+										</div>
+										<img src="<?php echo $symbol ?>" alt="" aria-hidden="true" class="frame">
+									</div>
+								</div>
+								<?php } ?>
+
+								<?php if ($bottom_text) { ?>
+								<div class="bottomText">
+									<div class="inside"><?php echo $bottom_text ?></div>
+									
+									<?php if ($bottomBtnName && $bottomBtnLink) { ?>
+									<div class="buttonWrap">
+										<a href="<?php echo $bottomBtnLink ?>" class="btn-default"><?php echo $bottomBtnName ?></a>
+									</div>	
+									<?php } ?>
+								</div>	
+								<?php } ?>
+							</div>
+						</div>
+					</section>	
+					<?php } ?>
 					
 				<?php } else { ?>
 
