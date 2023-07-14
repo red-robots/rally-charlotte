@@ -504,6 +504,8 @@ body.hero-video .menu-toggle{background:transparent !important}
 .video-panel .video-caption .video-text h6{font-size:.95em}
 .video-panel .video-caption .video-text p{font-size:1.5em;line-height:1.2;margin-top:5px}
 .video-frame{position:relative;z-index:-1;top:0;left:0;height:100%}
+.full-video-frame{position:relative;background-color:#1a2a36;max-width:1270px;width:100%;margin:0 auto 50px}
+.full-video-frame video{width:100%;height:auto}
 @media(min-width:380px){.section.tiles .flexcol{width:50%}
 .sitemapMenu .sitemapnav{width:auto;display:inline-block}
 }@media screen and (min-width:600px){#cboxTitle{position:absolute;top:0;left:0;text-align:left;width:20%;font-weight:bold;color:#fff;padding:8% 2% 8% 2%;line-height:1.3;font-size:20px}

@@ -1537,3 +1537,15 @@ body.hero-video {
 		}
 	}
 }
+
+.full-video-frame {
+	position: relative;
+	background-color: #1a2a36;
+	max-width: 1270px;
+	width: 100%;
+	margin: 0 auto 50px;
+	video {
+		width: 100%;
+  	height: auto;
+	}
+}

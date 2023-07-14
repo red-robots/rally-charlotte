@@ -27,6 +27,11 @@ get_header(); ?>
 				$featimage = get_field("featimage");  
 				$featimage_caption = get_field("featimage_caption");  
 				$hasTwoCol = ($columnText1 && ($columnText2 || $featimage)) ? 'twocol':'onecol';
+				
+				$v = get_field('featured_video');	
+				$webm = (isset($v['video_webm'])) ? $v['video_webm'] : '';
+				$mp4 = (isset($v['video_mp4'])) ? $v['video_mp4'] : '';
+
 				?>
 
 				<?php if ( $columnText1 || $columnText2 ) { ?>
@@ -34,6 +39,20 @@ get_header(); ?>
 					<h1 class="entry-title" style="display:none;"><?php echo the_title(); ?></h1>
 					<section class="section typical fullwidth-fl <?php echo $hasTwoCol ?>">
 						<div class="wrapper">
+							
+						<?php if($webm || $mp4) { ?>
+							<div class="full-video-frame">
+								<video controls>
+									<?php if($webm) { ?>
+										<source src="<?php echo $webm ?>" type="video/webm">
+									<?php } ?>
+									<?php if($mp4) { ?>
+										<source src="<?php echo $mp4 ?>" type="video/mp4">
+									<?php } ?>
+								</video>
+							</div>
+						<?php } ?>
+
 							<div class="flexwrap">
 								<?php if ($columnText1) { ?>
 								<div class="textcol txt1">
