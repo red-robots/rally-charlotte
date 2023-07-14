@@ -67,7 +67,6 @@ $plinks = ($donateLink) ? parse_external_url($donateLink) : '';
 	} else {
 		get_template_part('parts/content','banner'); 
 	}
-		
 	?>
 
 	<div id="content" class="site-content cf">

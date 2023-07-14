@@ -1465,11 +1465,11 @@ body.hero-video {
 	position: relative;
 	height: 80vh;
 	overflow: hidden;
-	@media only screen and (min-width: 1400px) {
-		height: 750px;
-	}
 	@media only screen and (min-width: 769px) {
-		height: 650px;
+		height: 700px;
+	}
+	@media only screen and (min-width: 1025px) {
+		height: 830px;
 	}
 
 	.video-caption {
