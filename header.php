@@ -13,6 +13,11 @@
 <?php
 $banner = get_slider();
 $hasBanner = ($banner) ? 'hasbanner':'nobanner';
+if( is_front_page() ) {
+	$hero_type = get_field('hero_type');
+	$hasBanner .= ($hero_type=='video') ? ' hero-video' : ' hero-image';
+}
+
 ?>
 
 <body <?php body_class($hasBanner); ?>>
@@ -56,6 +61,13 @@ $plinks = ($donateLink) ? parse_external_url($donateLink) : '';
 		</div><!-- wrapper -->
 	</header><!-- #masthead -->
 
-	<?php get_template_part('parts/content','banner'); ?>
+	<?php 
+	if($hero_type=='video') {
+		get_template_part('parts/content','video'); 
+	} else {
+		get_template_part('parts/content','banner'); 
+	}
+		
+	?>
 
 	<div id="content" class="site-content cf">

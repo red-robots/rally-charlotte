@@ -1448,3 +1448,92 @@ body.nav-open #header-overlay {
 		margin-bottom: 0;
 	}
 }
+
+body.hero-video {
+	.site-header {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: rgba(255,255,255,.85);
+	}
+	.menu-toggle {
+		background: transparent!important;
+	}
+}
+.video-panel {
+	position: relative;
+	height: 80vh;
+	overflow: hidden;
+	@media only screen and (min-width: 1400px) {
+		height: 730px;
+	}
+	@media only screen and (min-width: 769px) {
+		height: 650px;
+	}
+
+	.video-caption {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10;
+		background: rgba(0,0,0,.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.video-text {
+			max-width: 1100px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 30px;
+			text-align: center;
+			color: #FFF;
+			transform: translatey(3vw);
+			h1,h2,h3,h4,h5,h6 {
+				color: #FFF!important;
+				font-weight: 500;
+				line-height: 1.2;
+				margin: 0 0;
+			}
+			h1 {font-size: 3.5em;}
+			h2 {font-size: 3em;}
+			h3 {font-size: 2em;}
+			h4 {font-size: 1.8em;}
+			h5 {font-size: 1.2em;}
+			h6 {font-size: 0.95em;}
+			p {
+				font-size: 1.5em;
+				line-height: 1.2;
+				margin-top: 5px;
+			}
+		}
+	}
+}
+.video-frame {
+	position: relative;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	height: 100%;
+	@media only screen and (min-width: 769px) {
+		width: 100%;
+    overflow: hidden;
+
+		video {
+			background-color: #1a2a36;
+			top: 0;
+			left: 0;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
