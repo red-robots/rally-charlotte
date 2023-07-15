@@ -29,8 +29,10 @@ get_header(); ?>
 				$hasTwoCol = ($columnText1 && ($columnText2 || $featimage)) ? 'twocol':'onecol';
 				
 				$v = get_field('featured_video');	
+				$vType = (isset($v['video_type'])) ? $v['video_type'] : '';
 				$webm = (isset($v['video_webm'])) ? $v['video_webm'] : '';
 				$mp4 = (isset($v['video_mp4'])) ? $v['video_mp4'] : '';
+				$videoCDN = (isset($v['video_cdn'])) ? $v['video_cdn'] : '';
 
 				?>
 
@@ -40,17 +42,62 @@ get_header(); ?>
 					<section class="section typical fullwidth-fl <?php echo $hasTwoCol ?>">
 						<div class="wrapper">
 							
-						<?php if($webm || $mp4) { ?>
-							<div class="full-video-frame">
-								<video controls>
-									<?php if($webm) { ?>
-										<source src="<?php echo $webm ?>" type="video/webm">
+						<?php if($vType=='file') { ?>
+							<?php if($webm || $mp4) { ?>
+								<div class="videContainer full-video-frame video-file-path">
+									<video controls>
+										<?php if($webm) { ?>
+											<source src="<?php echo $webm ?>" type="video/webm">
+										<?php } ?>
+										<?php if($mp4) { ?>
+											<source src="<?php echo $mp4 ?>" type="video/mp4">
+										<?php } ?>
+									</video>
+								</div>
+							<?php } ?>
+						<?php } else if($vType=='cdn') { ?>
+							<?php if( $videoCDN ) { ?>
+								<?php 
+									$youtubeId = '';
+									$vimeoId = '';
+									$videoClass = '';
+									//print_r( $videoCDN );
+									if( strpos($videoCDN, 'youtu.be') !== false || strpos($videoCDN, 'youtube.com') !== false ){ 
+										$videoClass = ' youtube';
+										if( strpos($videoCDN, 'youtu.be') !== false ) {
+											$parts = explode('/',$videoCDN);
+											$youtubeId = end($parts);
+										}
+										else if( strpos($videoCDN, 'youtube.com') !== false ) {
+											$parts = explode('v=',$videoCDN);
+											$youtubeId = end($parts);
+										}
+									} else if( strpos($videoCDN, 'vimeo.com') !== false ) {
+										$parts = explode('/',$videoCDN);
+										$vimeoId = end($parts);
+									}
+								?>
+								<div class="videContainer video-cdn<?php echo $videoClass?>">
+									<?php if( $youtubeId ) { ?>
+										<iframe
+											allowfullscreen
+											frameborder="0"
+											height="100%"
+											width="100%"
+											src="https://youtube.com/embed/<?php echo $youtubeId; ?>?autoplay=0&controls=1&showinfo=0&autohide=1&rel=0"
+										>
+									</iframe>
+									<?php } else if( $vimeoId ) { ?>
+										<iframe 
+											src="https://player.vimeo.com/video/<?php echo $vimeoId; ?>?h=26fdb0017d&title=0&byline=0" 
+											frameborder="0" 
+											allow="autoplay; fullscreen; picture-in-picture"
+											allowfullscreen>
+										</iframe>
 									<?php } ?>
-									<?php if($mp4) { ?>
-										<source src="<?php echo $mp4 ?>" type="video/mp4">
-									<?php } ?>
-								</video>
-							</div>
+									<img src="<?php echo get_stylesheet_directory_uri() ?>/images/video-resizer.png" alt="" class="video-resizer">
+								</div>
+							<?php } ?>
 						<?php } ?>
 
 							<div class="flexwrap">
