@@ -76,6 +76,13 @@ get_header(); ?>
 										$parts = explode('/',$videoCDN);
 										$vimeoId = end($parts);
 									}
+
+									if( $youtubeId ) {
+										if( count(explode('&', $youtubeId)) > 1 ) {
+											$youtubeId = explode('&', $youtubeId)[0];
+										}
+									}
+									
 								?>
 								<div class="videContainer video-cdn<?php echo $videoClass?>">
 									<?php if( $youtubeId ) { ?>
@@ -84,7 +91,7 @@ get_header(); ?>
 											frameborder="0"
 											height="100%"
 											width="100%"
-											src="https://youtube.com/embed/<?php echo $youtubeId; ?>?autoplay=0&controls=1&showinfo=0&autohide=1&rel=0"
+											src="https://youtube.com/embed/<?php echo $youtubeId; ?>?autoplay=0&controls=1&showinfo=0&autohide=1&rel=0&playlist=<?php echo $youtubeId; ?>"
 										>
 									</iframe>
 									<?php } else if( $vimeoId ) { ?>
